@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Posts</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <h1>Micro Reddit</h1>
+  
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <a href="<%= user_path(post.user) %>">
+          <%= post.title %> by <%= post.user.username %>
+        </a>
+      </li>
+    <% end %>
+  </ul>
+</body>
+</html>

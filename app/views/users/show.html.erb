@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>User Profile</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="user-profile">
+    <h1><%= @user.username %>'s Profile</h1>
+    <p> <strong>Bio:</strong> <%= @user.bio %></p>
+    <h2>Posts by <%= @user.username %></h2>
+    <ul>
+      <% @user.posts.each do |post| %>
+        <li>
+          <a href="<%= post_path(post) %>">
+            <%= post.title %>
+          </a>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</body>
+</html>

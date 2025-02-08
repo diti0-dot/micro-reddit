@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= @post.title %></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <div class="post-detail">
+    <h1><%= @post.title %></h1>
+    <p><%= @post.content %></p>
+    <h3>Comments:</h3>
+    <ul>
+      <% @post.comments.each do |comment| %>
+        <li>
+          <strong><%= comment.user.username %></strong>: <%= comment.content %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</body>
+</html>
